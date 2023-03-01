@@ -90,7 +90,7 @@ class PageController extends Controller
 
         $static = Blocks::where('locale', 'ru')->first();
 
-        $static->siteName = "Krabi - Thai & Japanese | Кафе Краби - тайская и японская кухня в Одессе. Доставка суши, WOK";
+        $static->siteName = "Alloro - Eat & Love | Лучшие итальянские блюда в Одессе. Доставка пиццы";
         $static->newsTitle = "Новости";
         $static->salesTitle = "Акции";
         $static->galleryTitle = "Галерея";
@@ -115,6 +115,12 @@ class PageController extends Controller
         $static->orderEpmty = 'Список пуст';
         $static->toMenu = 'В меню';
         $static->orderGet = 'Спасибо! Ваш заказ принят!';
+
+        $static->workHoursTitle = 'ГРАФИК РАБОТЫ';
+        $static->waitForYou = 'Ждем Вас каждый день!';
+        $static->shortDays = 'Пн-Вс';
+
+
         
         
         $concept = Page::where('id', 2)->first();
@@ -169,7 +175,7 @@ class PageController extends Controller
 
         $static = Blocks::where('locale', 'ua')->first();
         
-        $static->siteName = 'Krabi - Thai & Japanese | Кафе Крабі - тайська та японська кухня в Одесі. Доставка суші, WOK';
+        $static->siteName = 'Alloro - Eat & Love | Найкращі італійські страви в Одесі. Доставка піци';
         $static->newsTitle = 'Новини';
         $static->salesTitle = 'Акції';
         $static->galleryTitle = 'Галерея';
@@ -194,6 +200,13 @@ class PageController extends Controller
         $static->orderEpmty = 'Список порожній';
         $static->toMenu = 'До меню';
         $static->orderGet = 'Дякуємо! Ваше замовлення прийнято!';
+
+        $static->workHoursTitle = 'ГРАФІК РОБОТИ';
+        $static->waitForYou = 'Ми чекаємо на вас щодня!';
+        $static->shortDays = 'Пн-Нд';
+        
+
+
 
         $concept = Page::where('id', 2)->first();
         $concept->title = $concept->title_ua;

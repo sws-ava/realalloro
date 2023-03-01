@@ -1,104 +1,39 @@
 <template>
-  <div>
+    <section id="hero-5" class="hero-section">
+      <div class="bg-fixed bg-inner division">
+
+
+        <!-- HERO TEXT -->
+        <div class="container">							
+          <div class="row">
+            <div class="col-md-12">
+              <div class="hero-5-txt text-center white-color">
+
+                <!-- Title -->	
+                <h2>Pizza</h2>
+
+                <!-- Image -->
+                <div class="hero-5-img">
+                  <img class="img-fluid" src="images/hero-5-img.png" alt="hero-image">
+                </div>
+
+              </div>  
+            </div>	 
+          </div>	 <!-- End row -->
+        </div>	 <!-- END HERO TEXT -->
+
+
+        <!-- SECTION OVERLAY -->	
+        <div class="bg-fixed white-overlay-wave"></div>
+
+
+      </div>	   <!-- End Inner Content -->
+    </section>
     
-    <section 
-      class="section-top-50 section-bottom-66 section-lg-top-160 section-lg-bottom-160 inset-left-15 inset-right-15" 
-      style="background-image: url(/images/main_images/main.jpg); background-position-x: 50%; padding-top: 15%; padding-bottom: 15%; background-position-y: 50%; background-size:100%;"
-    >
-      <div class="header-divider">
-      <h3 class="text-uppercase font-logo text-regular letter-spacing-200">{{$t('main.title')}}</h3>
-      </div>
-    </section>
-    <div v-html="$t('main.content')"></div>
-    <section class="section-bottom-70">
-      <div class="shell">
-        <hr class="hr-gray offset-top-50">
-      </div>
-    </section>
-    <section class="section-top-50 section-bottom-66 section-lg-top-160 section-lg-bottom-160 inset-left-15 inset-right-15 bg-menu">
-      <div class="header-divider">
-        <h3 class="text-uppercase font-logo text-regular letter-spacing-200">
-          {{ $t('main.ourMenu') }}
-        </h3>
-        <div class="text-center offset-top-9">
-          <ol class="breadcrumb">
-            <li>
-              <nuxt-link 
-                :to="localePath('menu')"
-              >
-                {{ $t('main.lookAll') }}
-              </nuxt-link>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="text-center section-70 section-sm-70 section-sm-bottom-83">
-      <div class="shell">
-        <div class="images row dishesBlock" v-viewer="{inline: false, navbar: false, title: false, toolbar: true, tooltip: false, movable: false, zoomable: false, rotatable: false, scalable: false, transition: true, fullscreen: false, keyboard: true}">
-          <div 
-            v-for="(src, idx) in menuImages"
-            :key="idx"
-            class="col-12 col-md-6 col-lg-4 dishesBlockItem"
-          >
-            <img
-              :src="src"   
-              class="dishesImage"
-            >
-          </div>
-        </div>
-        <hr class="hr-sealine-gray offset-top-45">
-        <hr class="hr-gray offset-top-45">
-      </div>
-    </section>
-
-		<section class="section-top-50 section-bottom-66 section-lg-top-160 section-lg-bottom-160 inset-left-15 inset-right-15 bg-int">
-      <div class="header-divider">
-        <h3 class="text-uppercase font-logo text-regular letter-spacing-200">
-          {{ $t('main.interior') }}
-        </h3>
-        <div class="text-center offset-top-9">
-          <ol class="breadcrumb">
-            <li>
-              <nuxt-link 
-                :to="localePath('interior')"
-              >
-                {{ $t('main.lookAll') }}
-              </nuxt-link>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
-    <section class="text-center section-50 section-sm-115">
-    	<div class="shell">
-			<div v-viewer="{inline: false, navbar: false, title: false, toolbar: true, tooltip: false, movable: false, zoomable: false, rotatable: false, scalable: false, transition: true, fullscreen: false, keyboard: true}">
-				<div 
-					v-for="(arr, index) in galleryImages" 
-					:key="index" 
-					class="gridGalleryItems"
-				>
-					<div 
-						v-for="(item, idx) in arr"
-						:key="idx"	
-						class="gridGalleryItem"
-					>
-						<img :src="imagesBaseUrl + item.path">
-					</div>
-				</div>
-			</div>
-        </div>
-        <hr class="hr-sealine-gray offset-top-45">
-        <hr class="hr-gray offset-top-45">
-    </section>
 
 
 
 
-
-  </div>
 </template>
 
 <script>

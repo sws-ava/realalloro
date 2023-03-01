@@ -1,221 +1,148 @@
 <template>
-      <header class="page-head section-top-15 section-lg-top-0">
-        <!-- RD Navbar-->
-        <div 
-			class="rd-navbar-wrap rd-navbar-variant-1"
+	<header id="header-1" 
+		ref="headerBlock"
+		class="header navik-header header-shadow center-menu-1 header-transparent viewport-lg"
+		:class="scrollPosition > 200 
+			? ' sticky' 
+			: ' header-transparent-on'"
 		>
-          <nav class="rd-navbar rd-navbar-original " 
-		  	:class="scX > 767 ? 'rd-navbar-fullwidth' : 'rd-navbar-fixed'"
-		  	data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fullwidth" data-md-layout="rd-navbar-fullwidth" 
-			data-lg-layout="rd-navbar-fullwidth" data-device-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" 
-			data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fullwidth" data-lg-stick-up-offset="207px">
+			<div class="container">
 
 
+				<!-- NAVIGATION MENU -->
+				<div class="navik-header-container">
+					
+					<header-contacts />
 
-            <button 
-			
-				@click="activeSubMenu"
-				:class="{active: subMenu}"
-			data-rd-navbar-toggle=".rd-navbar-top-panel" type="submit" class="rd-navbar-collapse-toggle"><span></span></button>
-			            <div 
-						ref="subMenuHolder"
-						class="rd-navbar-top-panel toggle-original-elements">
-              <div class="rd-navbar-top-panel-inner">
-                <div class="rd-navbar-address">
-                  <div class="unit unit-horizontal unit-spacing-xs">
-                    <div class="unit-left"><span class="icon icon-xxs mdi mdi-map-marker"></span></div>
-                    <div class="unit-body"><a v-html="$t('static.address')" href="#" class="text-base"></a></div>
 
-					<div class="unit-left">
-						<a target="_blank" style="padding-left: 2em;" href="https://www.facebook.com/krabisushicafe/">
-							<span class="icon icon-sm mdi mdi-facebook"></span>
-						</a>
-						<a target="_blank" style="padding-left: 2em;" href="https://www.instagram.com/krabicafe/">
-							<span class="icon icon-sm mdi mdi-instagram"></span>
+					<!-- CALL BUTTON -->
+				    <div class="callusbtn">
+						<a 
+							:href="'tel:'+$t('static.phone1full')"
+						>
+							<i class="fas fa-phone"></i>
 						</a>
 					</div>
-                  </div>
-                </div>
-                <div class="rd-navbar-address">
-                  <div class="unit unit-horizontal unit-spacing-xs">
-                    <div class="unit-left"><span class="icon icon-xxs mdi mdi-phone"></span></div>
-                    <div class="unit-body">
-						<a
-							:href="'tel:'+$t('static.phone1full')" 
-							class="text-base"
-							style="display: block; margin-bottom: 5px;"
-						>
-							{{$t('static.phone1')}}
-						</a>
-						<a
-							:href="'tel:'+$t('static.phone2full')" 
-							class="text-base"
-							
-						>
-							{{$t('static.phone2')}}
-						</a>
-					</div>
-                  </div> 
-                  <div class="unit unit-horizontal unit-spacing-xs">
-                    <div class="unit-left"><span class="icon icon-xxs mdi mdi-clock"></span></div>
-                    <div class="unit-body">
-                    	<time datetime="2016">{{ $t('static.workHours') }}</time>
-						<div class="localesHolder">
-							<div
-								@click="closeSubMenu"
-							>
-								<nuxt-link :to="switchLocalePath('ru')">RU</nuxt-link>
-								<nuxt-link :to="switchLocalePath('ua')">UA</nuxt-link>
-							</div>
-						</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="rd-navbar-main-panel">
-              <div class="rd-navbar-inner">
-                <!-- RD Navbar Panel-->
-                <div class="rd-navbar-panel">
-                  <!-- RD Navbar Toggle-->
-                  <button
-				  	@click="activeBurger"
-				  	:class="{active: isActiveBurger}"
-				   data-rd-navbar-toggle=".rd-navbar-nav-wrap" type="submit" class="rd-navbar-toggle toggle-original"><span></span></button>
-                  <!-- Little logo-->
+
+					
+					<!-- LOGO IMAGE -->
+	                <div class="logo">
 						<nuxt-link 
 							:to="localePath('mainPage')"
-							class="little-logo"
 						>
 							<span
 								@click="closeMenu()"
 							>
-								<img src="/images/logo-mini.png">
+								<img src="/logo.png" alt="header-logo"/>
 							</span>
 						</nuxt-link>
-
-				  <!-- RD Navbar Brand-->
-                  <div class="rd-navbar-brand">
-					
-					<nuxt-link 
-						:to="localePath('mainPage')"
-						class="brand-name" 
-					>
-						<span title="Кафе Краби, кафе krabi, суши краби, sushi krabi" alt="Кафе Краби, кафе krabi, суши краби, sushi krabi" >Sushi Krabi</span>
-						<span>Thai & Japanese Cafe</span>
-                    	<div class="rd-navbar-address"></div>
-					</nuxt-link>
-					<!-- <router-link 
-						:to="{ path: '/' }" 
-						class="brand-name" 
-					>
-					</router-link> -->
-					<!-- <a href="/" class="brand-name"></a> -->
 					</div>
-                </div>
-              </div>
-              <div class="rd-navbar-nav-inner justify-around display-flex align-center">
-                <div 
-					ref="menuHolder"
-				class="rd-navbar-nav-wrap">
-                  <!-- RD Navbar Nav-->
-					<ul class="rd-navbar-nav">
-						
-						<li 
-							@click="closeMenu()"
-						>
-							<nuxt-link
-								:to="localePath('menu')"
+
+					
+					<!-- BURGER MENU -->
+					<div 
+						@click="activeBurger"
+						class="burger-menu"
+						ref="mobileMenu"
+					>
+						<div class="line-menu line-half first-line"></div>
+						<div class="line-menu"></div>
+						<div class="line-menu line-half last-line"></div>
+					</div>
+
+
+					<!-- MAIN MENU -->
+	                <nav class="navik-menu menu-caret navik-yellow">
+	                	<ul class="top-list">
+							<li 
+								@click="closeMenu()"
 							>
-								{{ $t('navigation.menu') }}
-							</nuxt-link>
-						</li>
-						<li 
-							@click="closeMenu()"
-						>
-							<nuxt-link
-								:to="localePath('kontseptsiya')"
+								<nuxt-link
+									:to="localePath('interior')"
+								>
+									{{ $t('navigation.interior') }}
+								</nuxt-link>
+							</li>
+							<li 
+								@click="closeMenu()"
 							>
-								{{ $t('navigation.concept') }}
-							</nuxt-link>
-						</li>
-						<li 
-							@click="closeMenu()"
-						>
-							<nuxt-link
-								:to="localePath('interior')"
+								<nuxt-link
+									:to="localePath('gallery')"
+								>
+									{{ $t('navigation.gallery') }}
+								</nuxt-link>
+							</li>
+						</ul>
+						<div class="logoCenter" style="width: 151.453px;">
+							<div class="logo">
+								<nuxt-link 
+									:to="localePath('mainPage')"
+								>
+									<img src="logo.png" alt="header-logo">
+								</nuxt-link>
+							</div>
+						</div>
+						<ul>
+							<li 
+								@click="closeMenu()"
 							>
-								{{ $t('navigation.interior') }}
-							</nuxt-link>
-						</li>
-						<li 
-							@click="closeMenu()"
-						>
-							<nuxt-link
-								:to="localePath('delivery')"
+								<nuxt-link
+									:to="localePath('menu')"
+								>
+									{{ $t('navigation.menu') }}
+								</nuxt-link>
+							</li>
+							<li 
+								@click="closeMenu()"
 							>
-								{{ $t('navigation.delivery') }}
-							</nuxt-link>
-						</li>
-						<li 
-							@click="closeMenu()"
-						>
-							<nuxt-link
-								:to="localePath('news')"
-							>
-								{{ $t('navigation.news') }}
-							</nuxt-link>
-						</li>
-						<li 
-							@click="closeMenu()"
-						>
-							<nuxt-link
-								:to="localePath('sale')"
-							>
-								{{ $t('navigation.sale') }}
-							</nuxt-link>
-						</li>
-						<li 
-							@click="closeMenu()"
-						>
-							<nuxt-link
-								:to="localePath('gallery')"
-							>
-								{{ $t('navigation.gallery') }}
-							</nuxt-link>
-						</li>
-						<li 
-							@click="closeMenu()"
-						>
-							<nuxt-link
-								:to="localePath('contacts')"
-							>
-								{{ $t('navigation.contacts') }}
-							</nuxt-link>
-						</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </nav>
-        </div>
-      </header>
+								<nuxt-link
+									:to="localePath('contacts')"
+								>
+									{{ $t('navigation.contacts') }}
+								</nuxt-link>
+							</li>
+							<li class="mobile-locales">
+								<nuxt-link :to="switchLocalePath('ru')">RU</nuxt-link>
+								<nuxt-link :to="switchLocalePath('ua')">UA</nuxt-link>
+							</li>
+
+							<!-- BASKET ICON -->
+							<!-- <li class="basket-ico ico-30">
+					        	<a href="cart.html">
+					        		<span class="ico-holder"><span class="flaticon-shopping-bag"></span> <em class="roundpoint">2</em></span>
+					        	</a>
+					        </li> -->
+
+	                    </ul>
+	                </nav>	<!-- END MAIN MENU -->
+
+
+				</div>	<!-- END NAVIGATION MENU -->
+
+
+			</div>     <!-- End container -->
+		</header>	<!-- END HEADER-1 -->
+
+
 
 
 </template>
 
 <script>
 
+import headerContacts from '@/components/front/header/headerContacts.vue';
 import frontLocales from '@/components/front/header/frontLocales.vue'
 
 
 export default {
   	components: {
-		frontLocales,
+    	headerContacts,
+		frontLocales
 	},
 	mounted(){
 		this.getWidth()
 		window.addEventListener('resize', this.adaptiveHandler);
+		window.addEventListener('scroll', this.updateScroll);
 		
 	},
 	data(){
@@ -223,25 +150,30 @@ export default {
         	scX: '',
 			isActiveBurger: false,
 			subMenu: false,
+			scrollPosition: null
 		}
 	},
 	methods:{
+		updateScroll() {
+			this.scrollPosition = window.scrollY
+		},
 		getWidth(){
 			this.scX = window.innerWidth
 		},
 		adaptiveHandler: function (){
 			this.scX = window.innerWidth;
 		},
-		activeBurger: function() {
+		activeBurger() {
 			this.isActiveBurger = !this.isActiveBurger;
-			this.$refs.menuHolder.classList.toggle('active')
+			this.$refs.headerBlock.classList.toggle('active')
+			this.$refs.mobileMenu.classList.toggle('menu-open')
 		},
 		activeSubMenu: function() {
 			this.subMenu = !this.subMenu;
 			this.$refs.subMenuHolder.classList.toggle('active')
 		},
 		closeMenu(){
-			this.$refs.menuHolder.classList.remove('active')
+			this.$refs.headerBlock.classList.remove('active')
 			this.isActiveBurger = false
 		},
 		closeSubMenu(){
@@ -264,6 +196,20 @@ export default {
 	gap: 6px;
 	a + a {
 		margin-left: 30px;
+	}
+}
+.active nav ul {
+	display: block!important;
+}
+.mobile-locales{
+	display: none;
+    justify-content: center;
+    margin-top: 30px;
+	@media (max-width: 1200px){
+		display: flex;
+	}
+	a + a{
+		margin-left: 50px;
 	}
 }
 </style>

@@ -21,7 +21,7 @@ module.exports = {
     return{
       
       // title: process.env.APP_NAME,
-      title: "Krabi - Thai & Japanese | Кафе Краби - тайская и японская кухня в Одессе. Доставка суши, WOK",
+      title: "Alloro - Eat & Love | лучшие итальянские блюда в Одессе. Доставка пиццы",
       // titleTemplate: '%s - ' + process.env.APP_NAME,
       titleTemplate: '%s',
       meta: [

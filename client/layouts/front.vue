@@ -1,24 +1,22 @@
 <template>
-	<div
-		:class="scX > 767 ? 'desktop  rd-navbar-fullwidth-linked' : 'desktop  rd-navbar-fixed-linked'"
-	>
-		<div class="page text-center">
+	<div>
 			<front-header />
 			<warning-block />
 			<cart-block ref="cartBlock" />
-			<main>
+			<div id="page" class="page">
 				<nuxt />
-			</main>
+			</div>
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 			<front-footer />
-			<a  
+		</div>
+			<!-- <a  
 				:class="scY > 1000 ? 'active' : ''"
 				@click="toTop" 
 				href="#" 
 				id="ui-to-top" 
 				class="ui-to-top fa fa-angle-up"
-			></a>
-		</div>
-	</div>
+			></a> -->
+	<!-- </div> -->
 </template>
 
 <script>
@@ -40,7 +38,16 @@ export default {
 	head() {
 		return {
 			link: [
-				{rel: 'stylesheet', type: 'text/css', href: '/css/style.css'}
+				{rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap'},
+				{rel: 'stylesheet', type: 'text/css', href: '/css/bootstrap.min.css'},
+				// {rel: 'stylesheet', type: 'text/css', href: '/css/font.css'},
+				{rel: 'stylesheet', type: 'text/css', href: 'https://use.fontawesome.com/releases/v5.11.0/css/all.css'},
+				
+				{rel: 'stylesheet', type: 'text/css', href: '/css/flaticon.css'},
+				{rel: 'stylesheet', type: 'text/css', href: '/css/menu.css'},
+				{rel: 'stylesheet', type: 'text/css', href: '/css/style.css'},
+				{rel: 'stylesheet', type: 'text/css', href: '/css/responsive.css'},
+				{rel: 'stylesheet', type: 'text/css', href: '/css/styles.css'},
 			],
 			script: [
 				// {src: '/js/core.min.js', defer: true},
