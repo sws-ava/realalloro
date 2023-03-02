@@ -81,12 +81,12 @@ class PageController extends Controller
         $main->interior = 'Интерьер';
         $main->lookAll = 'Посмотреть все';
         
-        $main->address = '';
-        $main->phone1 = '(068) 168 96 95';
-        $main->phone1full = '+380681689695';
-        $main->phone2 = '(063) 877 78 51';
-        $main->phone2full = '+380638777851';
-        $main->workHours = '10:00 - 23:30';
+        // $main->address = '';
+        // $main->phone1 = '(068) 168 96 95';
+        // $main->phone1full = '+380681689695';
+        // $main->phone2 = '(063) 877 78 51';
+        // $main->phone2full = '+380638777851';
+        // $main->workHours = '10:00 - 23:30';
 
         $static = Blocks::where('locale', 'ru')->first();
 
@@ -119,6 +119,20 @@ class PageController extends Controller
         $static->workHoursTitle = 'ГРАФИК РАБОТЫ';
         $static->waitForYou = 'Ждем Вас каждый день!';
         $static->shortDays = 'Пн-Вс';
+        
+        $static->mainPage = 'Главная';
+
+        $static->formTitle = 'Напишите нам!';
+        $static->formSubtitle = 'Мы всегда стараемся стать лучше, чтобы наши Гости всегда были довольны! Напишите нам!';
+        $static->yourNamePlaceHolder = 'Ваше имя';
+        $static->yourPhonePlaceHolder = 'Ваш телефон';
+        $static->yourMessagePlaceHolder = 'Ваше сообщение...';
+        $static->sendLetter = 'Отправить';
+
+        $static->letterSending = 'Сообщение отправлено!';
+        $static->oneMoreLetter = 'Отправить еще';
+        $static->letterNotSending = 'Сообщение не отправлено!';
+        
 
 
         
@@ -204,6 +218,21 @@ class PageController extends Controller
         $static->workHoursTitle = 'ГРАФІК РОБОТИ';
         $static->waitForYou = 'Ми чекаємо на вас щодня!';
         $static->shortDays = 'Пн-Нд';
+
+        $static->mainPage = 'Головна';
+        
+        $static->formTitle = 'Напишіть нам!';
+        $static->formSubtitle = 'Ми завжди намагаємося стати кращими, щоб наші Гості завжди були задоволені! Напишіть нам!';
+        $static->yourNamePlaceHolder = "Ваше ім'я";
+        $static->yourPhonePlaceHolder = 'Ваш телефон';
+        $static->yourMessagePlaceHolder = 'Ваше повідомлення...';
+        $static->sendLetter = 'Надіслати';
+        
+        $static->letterSending = 'Повідомлення надіслано!';
+        $static->oneMoreLetter = 'Надіслати ще';
+        $static->letterNotSending = 'Повідомлення не надіслано!';
+
+
         
 
 

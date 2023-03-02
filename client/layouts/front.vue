@@ -6,7 +6,6 @@
 			<div id="page" class="page">
 				<nuxt />
 			</div>
-			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 			<front-footer />
 		</div>
 			<!-- <a  

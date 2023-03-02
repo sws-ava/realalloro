@@ -32,5 +32,17 @@ class FeedbackController extends Controller
     //     // return $feedbacks->count();
     //     return 1;
     // }
+    public function addFeedback(Request $request){
+        $item = new Feedback();
+        $item->name = $request->name;
+        $item->phone = $request->phone;
+        $item->text = $request->text;
+        $item->save();
+    }
+        
+
+
+        
+
     
 }

@@ -206,5 +206,9 @@ Route::group(['middleware' => 'guest:api'], function () {
     Route::post('getCartItems', [PageController::class, 'getCartItems']);
     Route::post('setNewOrder', [PageController::class, 'setNewOrder']);
 
+
+    // Feedbacks
+    Route::post('admin/addFeedback', [FeedbackController::class, 'addFeedback']);
+
     
     
