@@ -78,7 +78,7 @@
 								<nuxt-link 
 									:to="localePath('mainPage')"
 								>
-									<img src="logo.png" alt="header-logo">
+									<img src="/logo.png" alt="header-logo">
 								</nuxt-link>
 							</div>
 						</div>

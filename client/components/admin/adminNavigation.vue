@@ -29,7 +29,7 @@
 			>
 				Меню
 			</router-link>
-			<!-- <router-link
+			<router-link
 				:to="{name: 'admin-feedback'}" 
 				class="nav-link"
 			>
@@ -38,7 +38,7 @@
 				<span v-if="countUnreadedFeedbacks">
 					{{countUnreadedFeedbacks}}
 				</span>
-			</router-link> -->
+			</router-link>
 			<router-link 
 				:to="{name: 'admin-pages'}" 
 				class="nav-link"

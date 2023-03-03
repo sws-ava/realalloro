@@ -6,14 +6,13 @@
 			v-if="cartSum > 0"
 			class="cartBlock"
 		>
-			<font-awesome-icon 
-				:icon="['fa', 'cart-plus']"
-				style="width: 20px; height: 20px;"
-				class="fa-icon"
-			/>
 			<div class="nums">
+				<span class="basket-ico ico-30">
+					<span class="ico-holder">
+						<span class="flaticon-shopping-bag"></span>
+						<em class="roundpoint">{{cartAmount}}</em></span>
+				</span>
 				<!-- <div>{{cartAmount}}</div> -->
-				<div><span>{{cartSum.toFixed(2)}}</span> грн</div>
 			</div>
 		</div>
 	</router-link>
@@ -38,8 +37,8 @@ export default {
 
 <style lang="scss" scoped>
 .cartBlock {
-	background-color: #ffcb1f;
-    width: 145px;
+	background-color: #f7be27;
+    width: 66px;
     border-radius: 5px;
     color: #000;
     padding: 10px;
@@ -59,10 +58,7 @@ export default {
 		}
 	}
 	@media (max-width: 700px){
-		left: 50%;
-		transform: translateX(-50%);
-		bottom: 20px;
-		top: auto;
+		right: 10px;
 	}
 }
 </style>

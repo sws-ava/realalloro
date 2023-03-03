@@ -1,11 +1,11 @@
 <template>
-<div class="range">
+<div class="row">
 	
 	<!-- <h4>{{menuItems}}</h4> -->
 	<div 
 		v-for="menuItem in menuItems"
 		:key="menuItem.id"
-		class="cell-sm-12 cell-md-6 item_holder"
+		class="col-12 col-md-6 item_holder"
 	>
 		<div
 			v-if="menuItem.picture"
@@ -25,7 +25,7 @@
 				:key="item.id"
 				class="price_weight text_left" style="justify-content: space-between; align-items: center;"	
 			>
-				<span style="font-size: 12px; text-align: left;padding-right: 20px;">
+				<span class="subItemRow">
 					{{ item.title }} {{ item.weight }} {{ item.weightKind }}
 				</span>
 				<span 
@@ -144,6 +144,8 @@ export default {
 	.price_weight {
 		max-width: 80%;
     	margin: 0 auto 12px;
+		display: flex;
+		justify-content: space-between;
 		@media (max-width: 992px){
     		margin: 0 auto 20px;
 		}	
@@ -153,15 +155,17 @@ export default {
     	align-items: center;
 		cursor: pointer;
 		opacity: 1;
-		transition: opacity 0.25s ease-in-out;
+		transition: scale 0.25s ease-in-out;
+		font-weight: 700;
 		&:hover{
-			opacity: 0.7;
-			transition: opacity 0.25s ease-in-out;
+			// opacity: 0.7;
+			scale: 1.1;
+			transition: scale 0.25s ease-in-out;
 		}
 		svg{
 			margin-left: 10px;
 			// color: greenyellow;
-			color: #e0ca8f;
+			color: #f7be27;
 			width: 36px;
 			height: 21px;
 		}
@@ -170,6 +174,19 @@ export default {
 		img{
 			max-width: 250px;
 		}
+	}
+	.item_holder{
+		margin-bottom: 30px;
+	}
+	.subItemRow{
+		font-weight: 600;
+		font-size: 12px;
+		text-align: left;
+		padding-right: 20px;
+	}
+	.image_holder{
+		margin-bottom: 20px;
+		text-align: center;
 	}
 </style>
 

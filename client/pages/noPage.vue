@@ -1,6 +1,59 @@
 <template>
-  <div class="section-top-50">
-    <h2>Страница не найдена</h2>
+
+    <div>
+			<div 
+        class="page-hero-section division"
+        style="background-image: url(/images/contacts-page.jpg);"
+      >
+				<div class="container">	
+					<div class="row">	
+						<div class="col-lg-10 offset-lg-1">
+							<div class="hero-txt text-center white-color">
+
+								<!-- Breadcrumb -->
+								<div id="breadcrumb">
+									<div class="row">						
+										<div class="col">
+											<div class="breadcrumb-nav">
+												<nav aria-label="breadcrumb">
+												  	<ol class="breadcrumb">
+												    	<li class="breadcrumb-item">
+                                
+                                <nuxt-link 
+                                  :to="localePath('mainPage')"
+                                  class="footer-logo"
+                                >
+                                  {{$t('static.mainPage')}}
+                                </nuxt-link>
+                              </li>
+												    	<li class="breadcrumb-item active">
+                                {{$t('static.page_not_found')}}
+                              </li>
+												  	</ol>
+												</nav>
+											</div>
+										</div>
+									</div> 
+								</div>
+
+								<!-- Title -->
+                <div class="row">
+                  <div class="col-12">
+								    <h2 class="h2-xl">{{$t('static.page_not_found')}}</h2>
+                    <nuxt-link 
+                      :to="localePath('mainPage')"
+                      class="footer-logo"
+                    >
+                      {{$t('static.mainPage')}}
+                    </nuxt-link>
+                  </div>
+                </div>
+
+							</div>
+						</div>	
+					</div>	  
+				</div>	  
+			</div>	
   </div>
 </template>
 

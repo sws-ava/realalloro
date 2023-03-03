@@ -2,7 +2,7 @@
 	<div>
 		<div class="review-header mb-2">
 			<span class="mr-2">
-				{{ feedback.name }} {{ feedback.phone }}
+				{{ feedback.name }} {{ feedback.phone_ }}
 			</span>
 			<div class="review-header__status ">
 				<b>

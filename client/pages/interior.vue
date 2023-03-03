@@ -1,11 +1,49 @@
 <template>
-  <div> 
-    <section class="section-top-50 section-bottom-66 section-lg-top-160 section-lg-bottom-160 inset-left-15 inset-right-15"
-    style="background-image: url(/images/main_images/interer.jpg); background-size:100%; background-position-x: 50%; padding-top: 15%; padding-bottom: 15%; background-position-y: 50%;">
-      <div class="header-divider">
-      <h3 class="text-uppercase font-logo text-regular letter-spacing-200">{{$t('static.interiorTitle')}}</h3>
-      </div>
-    </section>
+
+    <div>
+			<div 
+        class="page-hero-section division"
+        style="background-image: url(/images/contacts-page.jpg);"
+      >
+				<div class="container">	
+					<div class="row">	
+						<div class="col-lg-10 offset-lg-1">
+							<div class="hero-txt text-center white-color">
+
+								<!-- Breadcrumb -->
+								<div id="breadcrumb">
+									<div class="row">						
+										<div class="col">
+											<div class="breadcrumb-nav">
+												<nav aria-label="breadcrumb">
+												  	<ol class="breadcrumb">
+												    	<li class="breadcrumb-item">
+                                
+                                <nuxt-link 
+                                  :to="localePath('mainPage')"
+                                  class="footer-logo"
+                                >
+                                  {{$t('static.mainPage')}}
+                                </nuxt-link>
+                              </li>
+												    	<li class="breadcrumb-item active">
+                                {{$t('static.interiorTitle')}}
+                              </li>
+												  	</ol>
+												</nav>
+											</div>
+										</div>
+									</div> 
+								</div>
+
+								<!-- Title -->
+								<h2 class="h2-xl">{{$t('static.interiorTitle')}}</h2>
+
+							</div>
+						</div>	
+					</div>	  
+				</div>	  
+			</div>	
     <gallery-images :galleryImages="galleryImages"/>
   </div>
 </template>

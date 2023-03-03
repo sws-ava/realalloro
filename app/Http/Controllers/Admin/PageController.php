@@ -115,6 +115,7 @@ class PageController extends Controller
         $static->orderEpmty = 'Список пуст';
         $static->toMenu = 'В меню';
         $static->orderGet = 'Спасибо! Ваш заказ принят!';
+        $static->cartTitle = 'Корзина';
 
         $static->workHoursTitle = 'ГРАФИК РАБОТЫ';
         $static->waitForYou = 'Ждем Вас каждый день!';
@@ -214,6 +215,7 @@ class PageController extends Controller
         $static->orderEpmty = 'Список порожній';
         $static->toMenu = 'До меню';
         $static->orderGet = 'Дякуємо! Ваше замовлення прийнято!';
+        $static->cartTitle = 'Кошик';
 
         $static->workHoursTitle = 'ГРАФІК РОБОТИ';
         $static->waitForYou = 'Ми чекаємо на вас щодня!';

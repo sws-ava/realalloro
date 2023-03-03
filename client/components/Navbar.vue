@@ -3,7 +3,7 @@
     <div class="container">
       <router-link :to="{ name: user ? 'dashboard' : 'welcome' }" class="navbar-brand">
         <!-- {{ appName }} -->
-        Krabi
+        Alloro
       </router-link>
  <!-- <button :aria-label="$t('toggle_navigation')" class="navbar-toggler" type="button"
               data-toggle="collapse" data-target="#navbarToggler"

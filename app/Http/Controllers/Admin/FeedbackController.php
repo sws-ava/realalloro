@@ -33,11 +33,11 @@ class FeedbackController extends Controller
     //     return 1;
     // }
     public function addFeedback(Request $request){
-        $item = new Feedback();
-        $item->name = $request->name;
-        $item->phone = $request->phone;
-        $item->text = $request->text;
-        $item->save();
+        $feedback = new Feedback();
+        $feedback->name = $request->formInfo['name'];
+        $feedback->phone_ = $request->formInfo['phone'];
+        $feedback->text = $request->formInfo['text'];
+        $feedback->save();
     }
         
 

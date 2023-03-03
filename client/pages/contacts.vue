@@ -273,7 +273,7 @@ export default {
         try {
           this.isLoading = true
           console.log(this.formInfo)
-          const res = await axios.post('/admin/addFeedback', this.formInfo)
+          const res = await axios.post('/admin/addFeedback', {formInfo: this.formInfo})
           console.log(res.data)
 
           // if(res.data !== 'ok'){
@@ -286,7 +286,7 @@ export default {
           this.clearInputs()
           this.isLoading = false
         } catch (e) {
-          console.log(e)
+          console.log(e.response.data)
           this.isLoading = false
           this.isLetterSended = false
           this.isLetterError = true

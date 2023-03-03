@@ -1,101 +1,82 @@
 <template>
-  <div> 
-    <section 
-      class="section-top-50 section-bottom-66 section-lg-top-160 section-lg-bottom-160 inset-left-15 inset-right-15" 
-      style="background-image: url(/images/main_images/test-menyu.jpg); background-size: 100%;  margin-bottom: 50px;  background-position-x: 50%; padding-top: 15%; padding-bottom: 15%; background-position-y: 50%;">
-      <div class="header-divider">
-      <h3 class="text-uppercase font-logo text-regular letter-spacing-200">Меню</h3>
-      </div>
-    </section>
-    <loading v-if="isLoading" />
+    <div>
+			<div 
+        class="page-hero-section division"
+        style="background-image: url(/images/contacts-page.jpg);"
+      >
+				<div class="container">	
+					<div class="row">	
+						<div class="col-lg-10 offset-lg-1">
+							<div class="hero-txt text-center white-color">
 
-    <div class="shell menuList menu_all">
-      <vsa-list :init-active="false" :auto-collapse="false">
-        <vsa-item v-for="(menuItem, idx) in menuItems" :key="menuItem.id">
-          <vsa-heading>
-            <div class="range">
-              <div class="cell-sm-12">
-                <h2>
-                  <a href='javascript:void(0)'>
-                    {{ menuItem.title }}
-                  </a>  
-                </h2>  
+								<!-- Breadcrumb -->
+								<div id="breadcrumb">
+									<div class="row">						
+										<div class="col">
+											<div class="breadcrumb-nav">
+												<nav aria-label="breadcrumb">
+												  	<ol class="breadcrumb">
+												    	<li class="breadcrumb-item">
+                                
+                                <nuxt-link 
+                                  :to="localePath('mainPage')"
+                                  class="footer-logo"
+                                >
+                                  {{$t('static.mainPage')}}
+                                </nuxt-link>
+                              </li>
+												    	<li class="breadcrumb-item active">
+                                {{$t('static.menuTitle')}}
+                              </li>
+												  	</ol>
+												</nav>
+											</div>
+										</div>
+									</div> 
+								</div>
+
+								<!-- Title -->
+								<h2 class="h2-xl">{{$t('static.menuTitle')}}</h2>
+
+							</div>
+						</div>	
+					</div>	  
+				</div>	  
+			</div>	
+
+      <div style="margin-top: 50px;">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <loading v-if="isLoading" />
+
+              <div class="menuList menu_all">
+                <vsa-list :init-active="false" :auto-collapse="false">
+                  <vsa-item v-for="(menuItem) in menuItems" :key="menuItem.id">
+                    <vsa-heading>
+                      <div class="row">
+                        <div class="col-12">
+                          <h2>
+                            <a href='javascript:void(0)'>
+                              {{ menuItem.title }}
+                            </a>  
+                          </h2>  
+                        </div>
+                      </div>
+                    </vsa-heading>
+
+                    <vsa-content>
+                      <menu-item
+                          :menuItems="menuItem.goods"
+                        />
+                    </vsa-content>
+                  </vsa-item>
+                </vsa-list>
               </div>
             </div>
-          </vsa-heading>
-
-          <vsa-content>
-            <menu-item
-                :menuItems="menuItem.goods"
-              />
-          </vsa-content>
-        </vsa-item>
-      </vsa-list>
-    </div>
-    <!-- <div class="shell">
-      <div class="panel-group menu_all" id="accordion" role="tablist" aria-multiselectable="true">
-        <div class="range">
-          <div
-            v-for="(menuItem, idx) in menuItems"
-            :key="menuItem.id"
-            class="cell-sm-12"
-          >
-            <div 
-              class="" 
-              role="tab" 
-              :id="'heading-' + idx"
-            >
-              <h3 class="">
-                <a 
-                  role="button"  
-                  data-toggle="collapse" 
-                  :href="'#collapse-' + idx" 
-                  aria-expanded="false" 
-                  :aria-controls="'collapse-' + idx" 
-                  class="collapsed"
-                >
-                  {{ menuItem.title }}       
-                </a>
-              </h3>
-            </div>
-            <div 
-              :id="'collapse-' + idx" 
-              class="panel-collapse collapse" 
-              role="tabpanel" 
-              :aria-labelledby="'heading-' + idx" 
-              aria-expanded="false" 
-              style="height: 40px;"
-            >
-              <menu-item
-                :menuItems="menuItem.goods"
-              />
-            </div>
           </div>
         </div>
       </div>
-    </div> -->
-
-    <div class="shell">
-        <div v-viewer="{inline: false, navbar: false, title: false, toolbar: true, tooltip: false, movable: true, zoomable: true, rotatable: false, scalable: false, transition: true, fullscreen: false, keyboard: true}">
-          
-      <div class="range">
-          <div 
-            v-for="photo in menuPhotos"
-            :key="photo.id"
-            class="cell-12 cell-sm-6 cell-md-4 cell-lg-3 mb-4"
-            style="margin-bottom: 30px;"
-          >
-            <img
-              :src="imagesBaseUrl + photo.path" 
-              class="paperMenuPhoto"
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
   </div>
 </template>
 
@@ -152,7 +133,7 @@ export default {
   data(){
     return{
       menuItems: [],
-      menuPhotos: [],
+      // menuPhotos: [],
       isLoading: false,
       imagesBaseUrl: '',
     }
@@ -167,9 +148,9 @@ export default {
         process.env.imagesBaseUrl + 'api/getMenu?locale=' + locale
       ).then(res => res.json())
 
-      this.menuPhotos = await fetch(
-        process.env.imagesBaseUrl + 'api/getMenuPhotos'
-      ).then(res => res.json())
+      // this.menuPhotos = await fetch(
+      //   process.env.imagesBaseUrl + 'api/getMenuPhotos'
+      // ).then(res => res.json())
       this.isLoading = false
     } catch (e) {
     }

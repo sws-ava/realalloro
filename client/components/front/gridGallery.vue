@@ -1,25 +1,27 @@
 <template>
-    <section class="text-center section-50 section-sm-115">
-    	<div class="shell">
-			<div v-viewer="{inline: false, navbar: false, title: false, toolbar: true, tooltip: false, movable: false, zoomable: false, rotatable: false, scalable: false, transition: true, fullscreen: false, keyboard: true}">
-				<div 
-					v-for="(arr, index) in galleryImages" 
-					:key="index" 
-					class="gridGalleryItems"
-				>
-					<div 
-						v-for="(item, idx) in arr"
-						:key="idx"	
-						class="gridGalleryItem"
-					>
-						<img :src="imagesBaseUrl + item.path">
-					</div>
-				</div>
-			</div>
+  <section id="contacts-5" class="wide-80 contacts-section division">	
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-10 offset-xl-1">
+          <div v-viewer="{inline: false, navbar: false, title: false, toolbar: true, tooltip: false, movable: false, zoomable: false, rotatable: false, scalable: false, transition: true, fullscreen: false, keyboard: true}">
+            <div 
+              v-for="(arr, index) in galleryImages" 
+              :key="index" 
+              class="gridGalleryItems"
+            >
+              <div 
+                v-for="(item, idx) in arr"
+                :key="idx"	
+                class="gridGalleryItem"
+              >
+                <img :src="imagesBaseUrl + item.path">
+              </div>
+            </div>
+          </div>
         </div>
-        <hr class="hr-sealine-gray offset-top-45">
-        <hr class="hr-gray offset-top-45">
-    </section>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
