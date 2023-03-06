@@ -1,7 +1,10 @@
 <template>
 	<div>
 		<div class="logo-holder">
-			<img src="/logo.png" alt="">
+			<img
+				style="width: 100%; max-width: 200px;"  
+				src="/logo.png" alt=""
+			>
 		</div>
 		Меню
 		<nav class="nav flex-column">
@@ -39,12 +42,12 @@
 					{{countUnreadedFeedbacks}}
 				</span>
 			</router-link>
-			<router-link 
+			<!-- <router-link 
 				:to="{name: 'admin-pages'}" 
 				class="nav-link"
 			>
 				Страницы
-			</router-link>
+			</router-link> -->
 			<router-link
 				:to="{name: 'admin-gallery'}"
 				class="nav-link"
@@ -58,19 +61,19 @@
 				Интерьер
 			</router-link>
 
-			<router-link
+			<!-- <router-link
 				:to="{name: 'admin-news'}"
 				class="nav-link"
 			>
 				Новости / Акции
-			</router-link>
+			</router-link> -->
 			<router-link
 				:to="{name: 'admin-blocks'}"
 				class="nav-link"
 			>
 				Блоки
 			</router-link>
-			<router-link
+			<!-- <router-link
 				:to="{name: 'admin-images'}"
 				class="nav-link"
 			>
@@ -81,7 +84,7 @@
 				class="nav-link"
 			>
 				Фото меню
-			</router-link>
+			</router-link> -->
 		</nav>
 </div>
 </template>

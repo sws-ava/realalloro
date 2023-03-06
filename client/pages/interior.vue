@@ -44,18 +44,23 @@
 					</div>	  
 				</div>	  
 			</div>	
-    <gallery-images :galleryImages="galleryImages"/>
+      <loading v-if="isLoading" />	
+      <gallery-images 
+        :galleryImages="galleryImages"
+      />
   </div>
 </template>
 
 <script>
 
 import galleryImages from '@/components/front/gridGallery.vue'
+import loading from '@/components/front/loading.vue'
 
 export default {
   layout: 'front',
   components:{
     galleryImages,
+    loading,
   },
   
   head(){
@@ -73,13 +78,16 @@ export default {
   data(){
     return{
       galleryImages: [],
+      isLoading: false,
     }
   },
 	async fetch() {
+    this.isLoading = true
 		this.imagesBaseUrl = process.env.imagesBaseUrl + 'storage/'
     this.galleryImages = await fetch(
       process.env.imagesBaseUrl + 'api/getInteriorImages'
     ).then(res => res.json())
+    this.isLoading = false
   },
 }
 </script>

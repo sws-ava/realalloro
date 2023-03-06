@@ -17,3 +17,7 @@
 .vsa-item__heading{
   text-align: center;
 }
+
+.overfolowHidden{
+  overflow: hidden;
+}

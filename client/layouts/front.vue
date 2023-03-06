@@ -7,14 +7,14 @@
 				<nuxt />
 			</div>
 			<front-footer />
-		</div>
-			<!-- <a  
-				:class="scY > 1000 ? 'active' : ''"
+			<a  
+				:class="scY > 700 ? 'activeToTop' : ''"
 				@click="toTop" 
-				href="#" 
+				href='javascript:void(0)'
 				id="ui-to-top" 
 				class="ui-to-top fa fa-angle-up"
-			></a> -->
+			></a>
+		</div>
 	<!-- </div> -->
 </template>
 
@@ -117,3 +117,20 @@ export default {
 </script>
 
 
+<style lang="scss" scoped>
+	.activeToTop{
+		position: fixed;
+		right: 30px;
+		bottom: 30px;
+		background: #f7be27;
+		padding: 0 5px;
+		border-radius: 3px;
+		width: 45px;
+		height: 45px;
+		font-size: 30px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #000;
+	}
+</style>

@@ -9,7 +9,7 @@ module.exports = {
 
   env: {
     apiUrl: process.env.API_URL || process.env.APP_URL + '/api',
-    appName: process.env.APP_NAME || '!Krabi',
+    appName: process.env.APP_NAME || 'Alloro - eat & love',
     appLocale: process.env.APP_LOCALE || 'ru',
     githubAuth: !!process.env.GITHUB_CLIENT_ID,
     imagesBaseUrl: process.env.BASE_URL,
@@ -30,7 +30,7 @@ module.exports = {
         { name: 'robots', content: 'noindex, nofollow' },
       ],
       link: [
-        // { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'icon', type: 'image/x-icon', href: '/favi-icons/favicon.ico' },
         { rel: 'apple-touch-icon', sizes:'57x57',  href: '/favi-icons/apple-icon-57x57.png' },
         { rel: 'apple-touch-icon', sizes:'60x60',  href: '/favi-icons/apple-icon-60x60.png' },
         { rel: 'apple-touch-icon', sizes:'72x72',  href: '/favi-icons/apple-icon-72x72.png' },
@@ -40,10 +40,10 @@ module.exports = {
         { rel: 'apple-touch-icon', sizes:'144x144',  href: '/favi-icons/apple-icon-144x144.png' },
         { rel: 'apple-touch-icon', sizes:'152x152',  href: '/favi-icons/apple-icon-152x152.png' },
         { rel: 'apple-touch-icon', sizes:'180x180',  href: '/favi-icons/apple-icon-180x180.png' },
-        { rel: 'icon', type:'image/png', sizes:'192x192',  href: '/favi-icons/apple-icon-192x192.png' },
-        { rel: 'icon', type:'image/png', sizes:'32x32',  href: '/favi-icons/apple-icon-32x32.png' },
-        { rel: 'icon', type:'image/png', sizes:'96x96',  href: '/favi-icons/apple-icon-96x96.png' },
-        { rel: 'icon', type:'image/png', sizes:'16x16',  href: '/favi-icons/apple-icon-16x16.png' },
+        { rel: 'icon', type:'image/png', sizes:'192x192',  href: '/favi-icons/android-icon-192x192.png' },
+        { rel: 'icon', type:'image/png', sizes:'32x32',  href: '/favi-icons/favicon-32x32.png' },
+        { rel: 'icon', type:'image/png', sizes:'96x96',  href: '/favi-icons/favicon-96x96.png' },
+        { rel: 'icon', type:'image/png', sizes:'16x16',  href: '/favi-icons/favicon-16x16.png' },
       ],
     }
   },

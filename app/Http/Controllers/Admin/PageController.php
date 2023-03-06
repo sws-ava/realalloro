@@ -211,7 +211,7 @@ class PageController extends Controller
         $static->orderAddress = 'Адреса';
         $static->orderPersons = 'Персон';
         $static->orderComment = 'Коментар для замовлення';
-        $static->orderNow = 'Оформити замовленн';
+        $static->orderNow = 'Оформити замовлення';
         $static->orderEpmty = 'Список порожній';
         $static->toMenu = 'До меню';
         $static->orderGet = 'Дякуємо! Ваше замовлення прийнято!';

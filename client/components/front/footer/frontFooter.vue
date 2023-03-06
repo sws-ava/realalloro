@@ -50,7 +50,7 @@
 					<div class="footer-img text-center mb-40">
 						<h5 class="h5-sm">Instagram</h5>
 						<ul class="text-center clearfix">
-							<li><p><a target="_blank" href="#"><i class="fab fa-instagram"></i></a></p></li></ul>	
+							<li><p><a target="_blank" href="https://www.instagram.com/alloro_eat_love/"><i class="fab fa-instagram"></i></a></p></li></ul>	
 					</div>
 				</div>
 			</div>

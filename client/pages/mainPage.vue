@@ -24,7 +24,10 @@
 
 
         <!-- SECTION OVERLAY -->	
-        <div class="bg-fixed white-overlay-wave"></div>
+        <div 
+          class="bg-fixed white-overlay-wave"
+          style="background-image: url(/images/white-overlay-wave.png);"
+        ></div>
 
 
       </div>	   <!-- End Inner Content -->

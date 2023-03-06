@@ -74,7 +74,11 @@
 							</li>
 						</ul>
 						<div class="logoCenter" style="width: 151.453px;">
-							<div class="logo">
+							<div 
+							:class="scrollPosition > 200 
+								? 'logo' 
+								: 'logo bgWhite'"
+							>
 								<nuxt-link 
 									:to="localePath('mainPage')"
 								>
@@ -101,7 +105,7 @@
 									{{ $t('navigation.contacts') }}
 								</nuxt-link>
 							</li>
-							<li class="mobile-locales">
+							<li class="mobile-locales" @click="closeMenu()">
 								<nuxt-link :to="switchLocalePath('ru')">RU</nuxt-link>
 								<nuxt-link :to="switchLocalePath('ua')">UA</nuxt-link>
 							</li>
@@ -167,6 +171,9 @@ export default {
 			this.isActiveBurger = !this.isActiveBurger;
 			this.$refs.headerBlock.classList.toggle('active')
 			this.$refs.mobileMenu.classList.toggle('menu-open')
+			let body = document.getElementsByTagName('body')[0]
+			body.classList.toggle('overfolowHidden')
+
 		},
 		activeSubMenu: function() {
 			this.subMenu = !this.subMenu;
@@ -175,6 +182,9 @@ export default {
 		closeMenu(){
 			this.$refs.headerBlock.classList.remove('active')
 			this.isActiveBurger = false
+			this.$refs.mobileMenu.classList.remove('menu-open')
+			let body = document.getElementsByTagName('body')[0]
+			body.classList.remove('overfolowHidden')
 		},
 		closeSubMenu(){
 			this.$refs.subMenuHolder.classList.remove('active')
@@ -210,6 +220,15 @@ export default {
 	}
 	a + a{
 		margin-left: 50px;
+	}
+}
+.logo.bgWhite {
+	a{
+		display: block;
+		background: #fff;
+		border-radius: 50%;
+		padding: 10px;
+		margin-top: -13px;
 	}
 }
 </style>
