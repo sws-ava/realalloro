@@ -77,23 +77,23 @@ const routes = [
 
   
   // Site pages
-  { path: '/', name: 'mainPage___ru', component: page('mainPage.vue') },
-  { path: '/ua/', name: 'mainPage___ua', component: page('mainPage.vue') },
+  { path: '/ru', name: 'mainPage___ru', component: page('mainPage.vue') },
+  { path: '/', name: 'mainPage___ua', component: page('mainPage.vue') },
 
   // { path: '/kontseptsiya', name: 'kontseptsiya___ru', component: page('concept.vue') },
   // { path: '/ua/kontseptsiya', name: 'kontseptsiya___ua', component: page('concept.vue') },
 
-  { path: '/contacts', name: 'contacts___ru', component: page('contacts.vue') },
-  { path: '/ua/contacts', name: 'contacts___ua', component: page('contacts.vue') },
+  { path: '/ru/contacts', name: 'contacts___ru', component: page('contacts.vue') },
+  { path: '/contacts', name: 'contacts___ua', component: page('contacts.vue') },
 
   // { path: '/dostavka', name: 'delivery___ru', component: page('delivery.vue') },
   // { path: '/ua/dostavka', name: 'delivery___ua', component: page('delivery.vue') },
   
-  { path: '/menu', name: 'menu___ru', component: page('menu.vue') },
-  { path: '/ua/menu', name: 'menu___ua', component: page('menu.vue') },
+  { path: '/ru/menu', name: 'menu___ru', component: page('menu.vue') },
+  { path: '/menu', name: 'menu___ua', component: page('menu.vue') },
   
-  { path: '/interior', name: 'interior___ru', component: page('interior.vue') },
-  { path: '/ua/interior', name: 'interior___ua', component: page('interior.vue') },
+  { path: '/ru/interior', name: 'interior___ru', component: page('interior.vue') },
+  { path: '/interior', name: 'interior___ua', component: page('interior.vue') },
   
   // { path: '/novosti', name: 'news___ru', component: page('news.vue') },
   // { path: '/ua/novosti', name: 'news___ua', component: page('news.vue') },
@@ -101,11 +101,11 @@ const routes = [
   // { path: '/aktsii', name: 'sale___ru', component: page('sale.vue') },
   // { path: '/ua/aktsii', name: 'sale___ua', component: page('sale.vue') },
   
-  { path: '/gallery', name: 'gallery___ru', component: page('gallery.vue') },
-  { path: '/ua/gallery', name: 'gallery___ua', component: page('gallery.vue') },
+  { path: '/ru/gallery', name: 'gallery___ru', component: page('gallery.vue') },
+  { path: '/gallery', name: 'gallery___ua', component: page('gallery.vue') },
   
-    { path: '/cart', name: 'cart___ru', component: page('cart.vue') },
-    { path: '/ua/cart', name: 'cart___ua', component: page('cart.vue') },
+    { path: '/ru/cart', name: 'cart___ru', component: page('cart.vue') },
+    { path: '/cart', name: 'cart___ua', component: page('cart.vue') },
 ]
 
 export function createRouter () {

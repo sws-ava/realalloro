@@ -90,9 +90,9 @@ module.exports = {
         ],
         langDir: 'lang/',
         strategy: 'prefix_except_default',
-        defaultLocale: 'ru',
+        defaultLocale: 'ua',
         vueI18n: {
-          fallbackLocale: 'ru',
+          fallbackLocale: 'ua',
         }
       }
     ],

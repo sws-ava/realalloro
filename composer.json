@@ -1,11 +1,16 @@
 {
     "name": "cretueusebiu/laravel-nuxt",
     "description": "A Laravel-Nuxt starter project template.",
-    "keywords": ["laravel", "nuxt", "vue", "spa"],
+    "keywords": [
+        "laravel",
+        "nuxt",
+        "vue",
+        "spa"
+    ],
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": "^7.3|^8.0",
+        "php": "^7.3|^8.1",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
@@ -30,15 +35,14 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": [
-            ]
+            "dont-discover": []
         }
     },
     "autoload": {
         "psr-4": {
-          "App\\": "app/",
-          "Database\\Factories\\": "database/factories/",
-          "Database\\Seeders\\": "database/seeders/"
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
         }
     },
     "autoload-dev": {

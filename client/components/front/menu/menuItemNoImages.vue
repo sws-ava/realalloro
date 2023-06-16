@@ -1,75 +1,38 @@
 <template>
-  <div class="row">
-    <div
-      v-for="menuItem in menuItems"
-      :key="menuItem.id"
-      class="col-lg-6 col-xl-4"
-      style="margin-bottom: 30px"
-    >
-      <div class="menu-6-item bg-white">
-        <!-- IMAGE -->
-        <div class="menu-6-img rel">
-          <div class="hover-overlay">
-            <!-- Image -->
-            <img
-              class="img-fluid"
-              :src="imagesBaseUrl + menuItem.picture"
-              alt="menu-image"
-            />
+  <div>
+    <ul class="menu-3-list row">
+      <!-- MENU ITEM-1 -->
+      <li
+        class="menu-3-item col-md-6"
+        v-for="menuItem in menuItems"
+        :key="menuItem.id"
+      >
+        <template>
+          <div class="menu-title-wrapper rel" v-for="index in 1" :key="index">
+            <div class="menu-item-title">
+              <h5 class="h5-sm">
+                {{ menuItem.title }} {{ menuItem.goodsItems[index].weight }}
+                {{ itemItem.goodsItems[index].weightKind }}
+              </h5>
+            </div>
+            <div class="menu-item-dots"></div>
+
+            <div class="menu-item-price">
+              <span @click="addToCart(item)" class="price">
+                {{ item.price }}
+                <font-awesome-icon
+                  :icon="['fa', 'cart-plus']"
+                  class="fa-icon"
+                />
+              </span>
+            </div>
           </div>
-        </div>
-
-        <div class="menu-6-txt rel">
-          <h5 class="h5-sm">{{ menuItem.title }}</h5>
-
-          <p class="grey-color">
-            {{ menuItem.description }}
-          </p>
-          <template v-if="menuItem.goodsItems.length > 1">
-            <div
-              v-for="item in menuItem.goodsItems"
-              :key="item.id"
-              class="price_weight text_left"
-              style="justify-content: space-between; align-items: center"
-            >
-              <span class="subItemRow">
-                {{ item.title }} {{ item.weight }} {{ item.weightKind }}
-              </span>
-              <span @click="addToCart(item)" class="price">
-                {{ item.price }}
-                <font-awesome-icon
-                  :icon="['fa', 'cart-plus']"
-                  class="fa-icon"
-                />
-              </span>
-            </div>
-          </template>
-          <template v-else>
-            <div
-              v-for="item in menuItem.goodsItems"
-              :key="item.id"
-              class="price_weight"
-            >
-              <span
-                style="font-size: 14px; font-weight: 600"
-                v-if="item.weight && item.weightKind"
-              >
-                {{ item.weight }} {{ item.weightKind }}
-              </span>
-              <span @click="addToCart(item)" class="price">
-                {{ item.price }}
-                <font-awesome-icon
-                  :icon="['fa', 'cart-plus']"
-                  class="fa-icon"
-                />
-              </span>
-            </div>
-          </template>
-        </div>
-      </div>
-    </div>
+        </template>
+      </li>
+    </ul>
   </div>
 </template>
+  
 
 <script>
 import { mapActions } from "vuex";
@@ -143,7 +106,7 @@ export default {
 
 <style lang="scss" scoped>
 .price_weight {
-  //   max-width: 80%;
+  max-width: 80%;
   margin: 0 auto 12px;
   display: flex;
   justify-content: space-between;
@@ -158,7 +121,6 @@ export default {
   opacity: 1;
   transition: scale 0.25s ease-in-out;
   font-weight: 700;
-  white-space: nowrap;
   &:hover {
     // opacity: 0.7;
     scale: 1.1;
@@ -190,9 +152,8 @@ export default {
   margin-bottom: 20px;
   text-align: center;
 }
-
-.menu-6-txt p {
-  line-height: 1.1;
+h5.h5-sm {
+  font-size: 1.2rem;
 }
 </style>
 
